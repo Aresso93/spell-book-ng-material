@@ -16,8 +16,6 @@ export class DataService {
       tap(spellObj => console.log('spellone completone', spellObj)),
       map((spellObj:any) => spellObj.results),
       tap(spellResult => console.log('spellone risultone', spellResult))
-
-      // map(redditChildren => redditChildren.map((child: any) => child.data))
     );
   }
 
