@@ -13,8 +13,9 @@
     <mat-icon>favorite</mat-icon>
   </button>
 </a>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
+  <button (click)="changeTheme()" class="example-icon">
+    <mat-icon *ngIf="isLightTheme">dark_mode</mat-icon>
+    <mat-icon *ngIf="!isLightTheme">light_mode</mat-icon>
   </button>
 </mat-toolbar>
 

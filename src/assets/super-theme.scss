@@ -1,0 +1,140 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$super-violet: (
+    50 : #f0f9e4,
+    100 : #d8f0bc,
+    200 : #bfe78f,
+    300 : #a5dd62,
+    400 : #91d540,
+    500 : #7ece1e,
+    600 : #76c91a,
+    700 : #6bc216,
+    800 : #61bc12,
+    900 : #4eb00a,
+    A100 : #e9ffdc,
+    A200 : #c8ffa9,
+    A400 : #a8ff76,
+    A700 : #97ff5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$super-yellow: (
+    50 : #f8f9e4,
+    100 : #edf0bc,
+    200 : #e2e78f,
+    300 : #d6dd62,
+    400 : #cdd540,
+    500 : #c4ce1e,
+    600 : #bec91a,
+    700 : #b6c216,
+    800 : #afbc12,
+    900 : #a2b00a,
+    A100 : #fcffdc,
+    A200 : #f7ffa9,
+    A400 : #f2ff76,
+    A700 : #efff5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$super-red: (
+    50 : #f9eee4,
+    100 : #f0d5bc,
+    200 : #e7b98f,
+    300 : #dd9d62,
+    400 : #d58840,
+    500 : #ce731e,
+    600 : #c96b1a,
+    700 : #c26016,
+    800 : #bc5612,
+    900 : #b0430a,
+    A100 : #ffe6dc,
+    A200 : #ffc2a9,
+    A400 : #ff9e76,
+    A700 : #ff8c5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$my-primary: mat.define-palette($super-yellow, 500);
+$my-accent: mat.define-palette($super-violet, A200, A100, A400);
+$my-warn: mat.define-palette($super-red);
+
+$super-theme-dark: mat.define-dark-theme(
+  (
+    color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+$super-theme-light: mat.define-light-theme(
+  (
+    color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+
+@include mat.all-component-themes($super-theme-light);
+
+.super-dark{
+  @include mat.all-component-themes($super-theme-dark);
+  background-color: #414141;
+  color: white;
+}
